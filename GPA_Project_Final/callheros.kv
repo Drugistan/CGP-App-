@@ -1,0 +1,279 @@
+<MenuScreen>:
+                                  # Design Main page
+    GridLayout:
+        canvas.before:
+            Rectangle:
+            # self here refers to the widget i.e BoxLayout                         # Background image add way
+                pos: self.pos
+                size: self.size
+                source: 'dp.jpg'
+    Label:
+        text : " Wellcome To LIST GPA Calculator"
+        font_size : "35dp"
+        pos_hint : {'top':0.4+0.8}
+        color : 1, 1, 1, 1
+
+    Button:
+        size : 75,50
+        text : "Start"
+        size_hint : None, None                            # Design Start Button
+        pos_hint : {'center_x':.5, 'center_y':.4}
+        font_size: 12
+        background_color: rgba(1, 0, 0)
+        on_press: root.switch_screen()
+
+
+
+         # ----------------- * Second page design *------------------------
+
+<Buttons>:
+    GridLayout:
+        canvas.before:
+            Rectangle:
+            # self here refers to the widget i.e BoxLayout
+                pos: self.pos
+                size: self.size
+                source: 'ab1.jpg'
+
+
+    Button:
+        text : "LIST CGPA"
+        size_hint : None , None
+        size : 150,100                       # Main page button
+        pos_hint : {'center_x':.3, 'center_y':.4}
+        font_size: 25
+        background_color: rgba(128,202,255)
+
+
+    Button:
+        text : "LIST GPA"
+        size_hint : None , None                             # Main page button
+        pos_hint : {'center_x':.6, 'center_y':.4}
+        font_size: 25
+        size : 150,100
+        background_color: rgba(0, 0, 255)
+        on_press : root.List()
+
+
+                              # ----------------- * 3rd page design *------------------------
+
+<List_page>:
+    container : container
+    GridLayout:
+        id : container
+        canvas.before:
+            Rectangle:
+            # self here refers to the widget i.e BoxLayout
+                pos: self.pos
+                size: self.size
+                source: 'ab1.jpg'
+        cols: 3
+        padding :40
+        spacing : 20
+        size: root.width * 1, root.height * 1
+        row_default_height: 35
+        row_force_default: True
+        center: root.width / 2, root.height / 2
+        Label :
+            font_size : "20dp"
+            text: "Course Title"
+        Label :
+            text: "Credit Hours"
+            font_size : "20dp"
+
+        Label :
+            text: "Percentage Grade"
+            font_size : "20dp"
+
+        TextInput:
+            hint_text: 'Course title'
+            min_value : 5
+            max_value : 15
+            id : title1
+            multiline: False
+
+        TextInput:
+            input_filter : "int"
+            id : Hours1
+            hint_text: 'Credit Hours'
+            multiline: False
+
+
+        TextInput:
+            id : percent1
+            hint_text: 'Percentage'
+            input_filter : "float"
+            multiline: False
+
+        TextInput:
+            multiline: False
+            id : title2
+            hint_text: 'Course title'
+        TextInput:
+            multiline: False
+            input_filter : "int"
+            id : Hours2
+            hint_text: 'Credit Hours'
+
+        TextInput:
+            multiline: False
+            input_filter : "float"
+            id : percent2
+            hint_text: 'Percentage'
+
+        TextInput:
+            multiline: False
+            id : title3
+            hint_text: 'Course title'
+        TextInput:
+            multiline: False
+            input_filter : "int"
+            id : Hours3
+            hint_text: 'Credit Hours'
+
+        TextInput:
+            multiline: False
+            input_filter : "float"
+            id : percent3
+            hint_text: 'Percentage'
+
+        TextInput:
+            multiline: False
+            id : title3
+            hint_text: 'Course title'
+
+        TextInput:
+            multiline: False
+            input_filter : "int"
+            id : Hours3
+            hint_text: 'Credit Hours'
+
+        TextInput:
+            multiline: False
+            input_filter : "float"
+            id : percent3
+            hint_text: 'Percentage'
+
+        TextInput:
+            multiline: False
+            id : title4
+            hint_text: 'Course title'
+
+        TextInput:
+            multiline: False
+            input_filter : "int"
+            id : Hours4
+            hint_text: 'Credit Hours'
+
+        TextInput:
+            multiline: False
+            input_filter : "float"
+            id : Percent4
+            hint_text: 'Percentage'
+
+        TextInput:
+            multiline: False
+            id : title5
+            hint_text: 'Course title'
+
+        TextInput:
+            multiline: False
+            input_filter : "int"
+            id : Hours5
+            hint_text: 'Credit Hours'
+
+        TextInput:
+            multiline: False
+            input_filter : "float"
+            id : percent5
+            hint_text: 'Percentage'
+
+        TextInput:
+            multiline: False
+            id : title6
+            hint_text: 'Course title'
+
+        TextInput:
+            multiline: False
+            input_filter : "int"
+            id : Hours6
+            hint_text: 'Credit Hours'
+
+        TextInput:
+            multiline: False
+            input_filter : "float"
+            id : Percent6
+            hint_text: 'Percentage'
+
+             # ----------------- * Move to 3rd page Button *------------------------
+
+    Button:
+        text : "Submit Quries"
+        size_hint : None, None
+        size : 150,100
+        pos_hint : {'center_x':.2, 'center_y':.10}
+        font_size: 20
+        back_color: (255, 0, 0.5)
+        on_press : root.fetch_data()
+
+    Button:
+        text : "Clear"
+        size_hint : None, None
+        size : 150,100                               # Clear button
+        pos_hint : {'center_x':.4, 'center_y':.10}
+        font_size: 20
+        background_color: rgba(255, 255, 255, 255)
+
+    Button:
+        text : "Back"
+        size_hint : None, None
+        size : 150,100                                  # Back button
+        pos_hint : {'center_x':.8, 'center_y':.10}
+        font_size: 25
+        background_color: rgba(0, 255, 128, 255)
+        on_press : root.move_back()
+
+<Submit_page>
+    GridLayout
+        canvas.before:
+            Rectangle:
+            # self here refers to the widget i.e BoxLayout
+                pos: self.pos
+                size: self.size
+                source: 'ab1.jpg'
+        rows : 2
+        cols : 2
+        padding :100
+        spacing :25
+
+        Label :
+            size_hint : 0.8 , 0.2
+            pos_hint : {"x": 0.1, "top": 1}
+            text: "Credit Hours"
+            font_size : "20dp"
+        TextInput:
+            pas_hint : {"x" :0.5, "top":0.8}
+            size_hint : 0.4, 0.20
+            multiline : False
+            hint_text: 'Course title'
+            id : username
+
+        Label :
+
+            text: "Credit Hours"
+            font_size : "20dp"
+        TextInput:
+            hint_text: 'Course title'
+            id : username
+
+<Pop>
+    Label:
+        center: root.width / 2, root.height / 2
+        id: result
+        font_size : "20dp"
+
+<Messg>
+    Label:
+        center : root.width / 2, root.height / 2
+        font_size : "20dp"
+        text : "ANy"
